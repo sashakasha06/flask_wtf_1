@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат - Словарь данных</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .dictionary-container {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .dictionary-item {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .dictionary-key {
+            font-weight: bold;
+            min-width: 200px;
+            color: #2980b9;
+        }
+        .dictionary-value {
+            flex-grow: 1;
+        }
+        .empty-message {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>'Миссия Колонизация Марса'</h1>
+    <h4 style="color: #2e8b57; padding-left: 20px;">'И на Марсе будут яблони цвести!'</h4>
+
+    <div class="dictionary-container">
+        {% if data %}
+            {% for key, value in data.items() %}
+                <div class="dictionary-item">
+                    <div class="dictionary-key">{{ key }}:</div>
+                    <div class="dictionary-value">
+                        {% if value is mapping %}
+                            {# Если значение само является словарем #}
+                            <div style="margin-left: 20px;">
+                                {% for k, v in value.items() %}
+                                    <div><strong>{{ k }}:</strong> {{ v }}</div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ value }}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty-message">Словарь пуст</div>
+        {% endif %}
+    </div>
+</body>
+</html>

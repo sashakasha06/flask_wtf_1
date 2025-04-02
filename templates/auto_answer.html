@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета для колонизации Марса</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #d33;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        .radio-group {
+            margin: 10px 0;
+        }
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        button {
+            background-color: #d33;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #b22;
+        }
+    </style>
+</head>
+<body>
+    <h1>Анкета для участия в миссии</h1>
+    <form method="post" action="/submit">
+        <div class="form-group">
+            <label for="surname">Фамилия:</label>
+            <input type="text" id="surname" name="surname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="education">Образование:</label>
+            <input type="text" id="education" name="education" required>
+        </div>
+
+        <div class="form-group">
+            <label for="profession">Профессия:</label>
+            <input type="text" id="profession" name="profession" required>
+        </div>
+
+        <div class="form-group">
+            <label>Пол:</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="sex" value="male" required>
+                <label for="male">Мужской</label>
+
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Женский</label>
+
+                <input type="radio" id="other" name="sex" value="other">
+                <label for="other">Другой</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="motivation">Мотивация:</label>
+            <textarea id="motivation" name="motivation" required></textarea>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="ready" name="ready" value="yes" required>
+            <label for="ready">Готов(а) отправиться на Марс</label>
+        </div>
+
+        <button type="submit">Отправить заявку</button>
+    </form>
+</body>
+</html>
