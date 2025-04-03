@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Размещение по каютам</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #1a3d66;
+        }
+        .cabin {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-left: 4px solid #1a3d66;
+        }
+        .captain {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <h1>'Миссия Колонизация Марса'</h1>
+    <h4 style="color: #2e8b57; padding-left: 20px;">'И на Марсе будут яблони цвести!'</h4>
+    <h4>Размещение по каютам</h4>
+
+    {% for i in astronauts %}
+        <li>{{ i }}
+        </li>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета для колонизации Марса</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #d33;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        .radio-group {
+            margin: 10px 0;
+        }
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        button {
+            background-color: #d33;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #b22;
+        }
+    </style>
+</head>
+<body>
+    <h1>Анкета для участия в миссии</h1>
+    <form method="post" action="/distribution">
+        <div class="form-group">
+            <label for="astro_id">id астронавта:</label>
+            <input type="text" id="astro_id" name="astro_id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="astro_pass">Пароль астронавта:</label>
+            <input type="text" id="astro_pass" name="astro_pass" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cap_id">id капитана:</label>
+            <input type="text" id="cap_id" name="cap_id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cap_pass">Пароль капитана:</label>
+            <input type="text" id="cap_pass" name="cap_pass" required>
+        </div>
+
+        <button type="submit">доступ</button>
+    </form>
+</body>
+</html>
