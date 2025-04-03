@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>'Миссия Колонизация Марса'</h1>
+        <h4>'И на Марсе будут яблони цвести!'</h4>
+        {% set medics = ['экзобиолог',
+        'врач',
+        'климатолог',
+        'специалист по радиационной защите',
+        'астрогеолог',
+        'гляциолог'] %}
+        {% if prof in medics %}
+        <h4>Научные симуляторы</h4>
+        <img src="/static/images/science_simulator.jpg" alt="Научные симуляторы" width="300">
+    {% else %}
+        <h4>Инженерные тренажеры</h4>
+        <img src="/static/images/engineering_trainer.jpg" alt="Инженерные тренажеры" width="300">
+    {% endif %}
+
+    </body>
+</html>
