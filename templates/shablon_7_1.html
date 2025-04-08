@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление каюты</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h2>Оформление каюты</h2>
+
+    <table>
+        <tr>
+            <th>Цвет стен</th>
+            <th>Изображение</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="color-box" style="background-color: #{{ wall_color }};"></div>
+                <p>Код цвета: #{{ wall_color }}</p>
+            </td>
+            <td>
+                {% if age < 21 %}
+                <img src="/static/images/young.jpg" alt="Марсианин" width="100">
+                {% else %}
+                <img src="/static/images/adult.jpg" alt="Марсианин" width="100">
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <p>Пол: {{ sex }}, Возраст: {{ age }}</p>
+</body>
+</html>
